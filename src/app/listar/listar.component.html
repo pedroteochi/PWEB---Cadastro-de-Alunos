@@ -1,0 +1,39 @@
+<div class = "container">
+<div class = "cadastros">
+<h2> Carros cadastrados</h2>
+<table>
+
+<tr> 
+    <td>Id</td>
+    <td>Nome</td>
+    <td>Cor</td>
+    <td>Preço</td>
+    <td>Material</td>
+    <td>Ação</td>
+</tr>
+<tr *ngFor="let prod of produtos">
+
+    <td>{{prod.id}}</td>
+    <td>{{prod.nome}}</td>
+    <td>{{prod.cor}}</td>
+    <td>{{prod.preco}}</td>
+    <td>{{prod.material}}</td>
+    <td>
+        <button type="button" (click)="onSelect(prod)"[class.teste]="prod === selectedProd">Editar</button>
+    </td>
+
+
+
+</tr>
+
+
+
+
+</table>
+</div>   
+<div class="editar">
+    <app-editar [selectedProd]="selectedProd"></app-editar>
+</div>
+</div>
+
+
